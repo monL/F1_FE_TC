@@ -31,13 +31,17 @@ var case1 = new app.SingleCaseModel({
         views: 86
     }
   });
-  
-  console.log(case1.toJSON());
-  console.log(case2.toJSON());
 
-  var collection = new app.CaseCollectionModel([
+  var caseCollection = new app.CaseCollectionModel([
       case1, 
       case2
   ]);
 
-  console.log(collection);
+var caseCollectionView = new app.CaseCollectionView({ collection: caseCollection});
+
+$("#all-cases").html(caseCollectionView.render().el);
+
+var appRouter = new app.Router();
+
+Backbone.history.start();
+

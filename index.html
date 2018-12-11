@@ -5,7 +5,20 @@
   </head>
   <body>
     <!-- Where our application will render everything to -->
-    <div id="root"></div>
+    <div id="all-cases"></div>
+
+    <!-- TODO: remove this unless if it's not used -->
+    <div id="copy"></div>
+
+    <!-- render list of items -->
+    <script id="caseElement" type="text/template">
+        <a href="#<%= id %>">Link></a>
+        <ul>
+            <li class="caseInfo"><strong>Name:</strong> <%= username %></li>
+            <li class="caseInfo"><strong>Type:</strong> <%= type %></li>
+            <li class="caseInfo"><strong>Caption:</strong> <%= caption %></li>
+        </ul>
+    </script>
     
     <!-- Libraries -->
     <script src="app/libs/jquery.js"></script>
@@ -14,7 +27,10 @@
 
     <!-- links to all the files needed -->
     <script src="app/models/singleCaseModel.js"></script>
+    <script src="app/views/singleCaseView.js"></script>
     <script src="app/collections/caseCollectionModel.js"></script>
+    <script src="app/views/caseCollectionView.js"></script>
+    <script src="app/routes/router.js"></script>
 
     <!-- Link to  compiled application -->
     <script src="app/app.js"></script>
