@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Medical Study Cases</title>
   </head>
   <body>
@@ -17,29 +18,39 @@
       <div>
         <img class="post_img" src="<%= image.post %>">
       </div>
-      <div class="post_username">
-        <p><strong>Name:</strong> <%= username %></p>
-      </div>
-      <div class="post_caption">
-          <p><strong>Caption:</strong> <%= caption %></p>
-    </div>
-      <div>
-        <div>
-          <a>Views</a>
-          <a><%= stats.views %></a>
+
+      <div class="post-content">
+        
+        <div class="post_user_info">
+          <img class="post_profile_img" src="<%= image.profile %>">
+          <a><%= username %></a>
         </div>
-        <div>
-          <a>Follows</a>
-          <a><%= stats.follow %></a>
+
+        <div class="post_caption">
+            <p> <%= caption %></p>
         </div>
-        <div>
-          <a>Stars</a>
-          <a><%= stats.star %></a>
+
+        <div class="post-stats">
+          <div>
+            <a><%= stats.views %></a>
+            <a>views</a>
+          </div>
+          <div>
+            <a><%= stats.follow %></a>
+            <a>followers</a>
+          </div>
+          <div>
+            <i class="fa fa-star"></i>
+            <a><%= stats.star %></a>
+          </div>
         </div>
+
+        <div class="post_comment_summary">
+            <a href="#<%= id %>">VIEW DISCUSSION</a>
+        </div>
+
       </div>
-      <div>
-        <p> Comments </p>
-      </div>
+
     </script>
     
     <!-- Libraries -->

@@ -10,19 +10,5 @@ app.singleCaseView = Backbone.View.extend({
         var caseTemplate = this.template(this.model.toJSON());
         this.$el.html(caseTemplate);
         return this;
-      },
-
-    events: {
-    'mouseover': 'addBgColor',
-    'mouseout': 'removeBgColor'
-    },
-
-    addBgColor: function() {
-    this.$el.addClass("highlight");
-    },
-
-    removeBgColor: function() {
-    this.$el.removeClass("highlight");
-    }
-
+      }
 });
