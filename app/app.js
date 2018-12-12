@@ -32,14 +32,27 @@ var case1 = new app.SingleCaseModel({
     }
   });
 
-  var caseCollection = new app.CaseCollectionModel([
+  var caseCollectionMock = new app.CaseCollectionModel([
       case1, 
       case2
   ]);
 
-var caseCollectionView = new app.CaseCollectionView({ collection: caseCollection});
+  console.log('mock collection', caseCollectionMock);
 
-$("#all-cases").html(caseCollectionView.render().el);
+var caseCollection = new app.CaseCollectionModel();
+caseCollection.fetch({
+    success: function() {
+        console.log('Fetched the Case collection!');
+    },
+    error: function() {
+        console.log('Something failed...');
+    }
+}).done(function(){
+    console.log('collection', caseCollection);
+    
+    var caseCollectionView = new app.CaseCollectionView({ collection: caseCollection});
+    $("#all-cases").html(caseCollectionView.render().el);
+});
 
 var appRouter = new app.Router();
 
