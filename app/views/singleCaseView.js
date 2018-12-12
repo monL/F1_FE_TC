@@ -1,7 +1,7 @@
 var app = app || {};
 
 app.singleCaseView = Backbone.View.extend({
-    tagName: "article", // this is an html tag
+    tagName: "div", // this is an html tag
     className: "case", //this is for styling.
 
     template: _.template( $("#caseElement").html() ),

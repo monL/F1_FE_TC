@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Medical Study Cases</title>
   </head>
   <body>
-    <!-- Where our application will render everything to -->
+    <h2>Medical Study Cases</h2>
+
+
+    <!-- Where everything is rendered -->
     <div id="all-cases"></div>
 
-    <!-- TODO: remove this unless if it's not used -->
-    <div id="copy"></div>
-
-    <!-- render list of items -->
+    <!-- render list of posts -->
     <script id="caseElement" type="text/template">
-        <a href="#<%= id %>">Link></a>
-        <ul>
-            <li class="caseInfo"><strong>Name:</strong> <%= username %></li>
-            <li class="caseInfo"><strong>Type:</strong> <%= type %></li>
-            <li class="caseInfo"><strong>Caption:</strong> <%= caption %></li>
-        </ul>
+      <!-- <a href="#<%= id %>">View details</a> LINK TO POST DETAILS -->
+      <div>
+        <img class="post_img" src="<%= image.post %>">
+      </div>
+      <div class="post_username">
+        <p><strong>Name:</strong> <%= username %></p>
+      </div>
+      <div class="post_caption">
+          <p><strong>Caption:</strong> <%= caption %></p>
+    </div>
+      <div>
+        <div>
+          <a>Views</a>
+          <a><%= stats.views %></a>
+        </div>
+        <div>
+          <a>Follows</a>
+          <a><%= stats.follow %></a>
+        </div>
+        <div>
+          <a>Stars</a>
+          <a><%= stats.star %></a>
+        </div>
+      </div>
+      <div>
+        <p> Comments </p>
+      </div>
     </script>
     
     <!-- Libraries -->

@@ -1,7 +1,8 @@
 var app = app || {};
 
 app.CaseCollectionView = Backbone.View.extend({
-    tagName: "section",
+    tagName: "div",
+    className: "flex-container",
 
     render: function() {
         this.collection.each(this.addCase, this);
