@@ -9,6 +9,11 @@ body {
     justify-content: center;
 }
 
+.post-case {
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 gray;
+}
+
 .post-content {
     padding: 0px 14px;
 }
@@ -39,12 +44,6 @@ body {
     color: gray;
 }
 
-.post-case {
-    margin: 20px;
-    box-shadow: 0 4px 8px 0 gray;
-    width: 400px;
-}
-
 .post-case:hover {
     box-shadow: 0 8px 16px 0 gray;
 }
@@ -59,4 +58,33 @@ body {
 
 .post-comment-summary a:link {
     text-decoration: none;
+}
+
+/* Rules for responsive layout using media queries */
+/* Extra small devices (phones, 768px and down) */
+@media only screen and (max-width: 767) {
+    .post-case {
+        width: 90%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .post-case {
+        width: 40%;
+    } 
+}
+
+/*  Large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .post-case {
+        width: 30%;
+    } 
+}
+
+/* Extra Large devices (laptops/desktops, 1600px and up) */
+@media only screen and (min-width:1600px) {
+    .post-case {
+        width: 20%;
+    } 
 }
