@@ -8,30 +8,29 @@
   <body>
     <h2>Medical Study Cases</h2>
 
-
     <!-- Where everything is rendered -->
-    <div id="main-content"></div>
+    <div id="mainContent"></div>
 
-    <!-- template for post details -->
-    <script id="case-details" type="text/template">
+    <!-- template for case details -->
+    <script id="caseDetails" type="text/template">
       <h1> Case Details </h1>
     </script>
 
-    <!-- template for list of posts -->
+    <!-- template for post list -->
     <script id="caseElement" type="text/template">
       <!-- <a href="#<%= id %>">View details</a> LINK TO POST DETAILS -->
       <div>
-        <img class="post_img" src="<%= image.post %>">
+        <img class="post-img" src="<%= image.post %>">
       </div>
 
       <div class="post-content">
         
-        <div class="post_user_info">
-          <img class="post_profile_img" src="<%= image.profile %>">
+        <div class="post-user-info">
+          <img class="post-profile-img" src="<%= image.profile %>">
           <a><%= username %></a>
         </div>
 
-        <div class="post_caption">
+        <div class="post-caption">
             <p> <%= caption %></p>
         </div>
 
@@ -50,7 +49,7 @@
           </div>
         </div>
 
-        <div class="post_comment_summary">
+        <div class="post-comment-summary">
             <a href="#post/<%= id %>">VIEW DISCUSSION</a>
         </div>
 

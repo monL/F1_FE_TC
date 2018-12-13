@@ -12,6 +12,7 @@ app.Router = Backbone.Router.extend({
 
     postDetails: function(id) {
         console.log('navigate to view post with id ', id);
+        //TODO: fetch or get post model with id=id
         const testModel = new app.CaseDetailsModel({
             id: "5a1edb556384ec96b71d4a98",
             username: "catc",
@@ -29,6 +30,6 @@ app.Router = Backbone.Router.extend({
           }
           );
         var caseDetailView = new app.caseDetailsView({ model: testModel });
-        $("#main-content").html(caseDetailView.render().el);
+        $("#mainContent").html(caseDetailView.render().el);
     }
 });

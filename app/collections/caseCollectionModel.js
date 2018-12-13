@@ -4,7 +4,8 @@ app.CaseCollectionModel = Backbone.Collection.extend({
     url: "https://staging-app.figure1.com/mock/feed",
     model: app.SingleCaseModel,
     parse: function(response) {
-        //or fill the arrays on the go.
+        
+        //extract comments and posts from feed
         const posts = [];
         const comments = [];
 
@@ -14,12 +15,12 @@ app.CaseCollectionModel = Backbone.Collection.extend({
            } else if (element.type === 'comment') {
                comments.push(element);
            } else {
-               //Ignore all cases for the moment
+               //Ignore all other cases for the moment
                return;
            }
         });
 
-        //Map and attach comments to posts
+        //attach comments to their corresponding post
         comments.forEach(function(comment) {
             const postIndex = posts.findIndex(post => post.id === comment.postID);
             if (postIndex >= 0) {

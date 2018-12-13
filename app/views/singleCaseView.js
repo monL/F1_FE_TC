@@ -1,8 +1,8 @@
 var app = app || {};
 
-app.singleCaseView = Backbone.View.extend({
-    tagName: "div", // this is an html tag
-    className: "case", //this is for styling.
+app.SingleCaseView = Backbone.View.extend({
+    tagName: "div",
+    className: "post-case",
 
     template: _.template( $("#caseElement").html() ),
 

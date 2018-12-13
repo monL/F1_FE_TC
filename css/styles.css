@@ -13,18 +13,18 @@ body {
     padding: 0px 14px;
 }
 
-.post_img {
+.post-img {
     width: 100%;
     height: auto;
 }
 
-.post_profile_img {
+.post-profile-img {
     border-radius: 50%;
     height: 30px;
     vertical-align: middle;
 }
 
-.post_user_info {
+.post-user-info {
     align-content: center;
     margin-top: 20px;
 }
@@ -39,24 +39,24 @@ body {
     color: gray;
 }
 
-.case {
+.post-case {
     margin: 20px;
     box-shadow: 0 4px 8px 0 gray;
     width: 400px;
 }
 
-.case:hover {
+.post-case:hover {
     box-shadow: 0 8px 16px 0 gray;
 }
 
-.post_comment_summary {
+.post-comment-summary {
     margin: 20px 0px;
 }
 
-.post_comment_summary a {
+.post-comment-summary a {
     color: #4f6fa3;
 }
 
-.post_comment_summary a:link {
+.post-comment-summary a:link {
     text-decoration: none;
 }

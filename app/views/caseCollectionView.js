@@ -10,7 +10,7 @@ app.CaseCollectionView = Backbone.View.extend({
     },
 
     addCase: function(caseModel) {
-        var caseView = new app.singleCaseView ({ model: caseModel });
+        var caseView = new app.SingleCaseView ({ model: caseModel });
         this.$el.append(caseView.render().el);
     }
 });
