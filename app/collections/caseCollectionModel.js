@@ -4,6 +4,8 @@ app.CaseCollectionModel = Backbone.Collection.extend({
     url: "https://staging-app.figure1.com/mock/feed",
     model: app.SingleCaseModel,
     parse: function(response) {
+
+        if (response.feed.length === 0) return [];
         
         //extract comments and posts from feed
         const posts = [];

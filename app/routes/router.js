@@ -10,8 +10,8 @@ app.Router = Backbone.Router.extend({
     home: function() {
         //Fetch collection of case posts
         //CaseCollectionModel calls the mock api, parses and stores the response data
-        var caseCollection = new app.CaseCollectionModel();
-        caseCollection.fetch({
+        var caseCollectionModel = new app.CaseCollectionModel();
+        caseCollectionModel.fetch({
             success: function() {
                 console.log('Fetched the Case collection!');
             },
@@ -19,7 +19,13 @@ app.Router = Backbone.Router.extend({
                 console.log('Something failed...');
             }
         }).done(function(){
-            var caseCollectionView = new app.CaseCollectionView({ collection: caseCollection});
+            if (caseCollectionModel.length === 0 ) {
+                $("#mainContent").html('No cases have been posted yet');
+                $("#seeMoreBtn").toggleClass('hidden');
+                return;
+            }
+
+            var caseCollectionView = new app.CaseCollectionView({ collection: caseCollectionModel});
             //Render collection information using the casecollectionView
             $("#mainContent").html(caseCollectionView.render().el);
 });
