@@ -10,9 +10,14 @@
 
 
     <!-- Where everything is rendered -->
-    <div id="all-cases"></div>
+    <div id="main-content"></div>
 
-    <!-- render list of posts -->
+    <!-- template for post details -->
+    <script id="case-details" type="text/template">
+      <h1> Case Details </h1>
+    </script>
+
+    <!-- template for list of posts -->
     <script id="caseElement" type="text/template">
       <!-- <a href="#<%= id %>">View details</a> LINK TO POST DETAILS -->
       <div>
@@ -46,7 +51,7 @@
         </div>
 
         <div class="post_comment_summary">
-            <a href="#<%= id %>">VIEW DISCUSSION</a>
+            <a href="#post/<%= id %>">VIEW DISCUSSION</a>
         </div>
 
       </div>
@@ -63,6 +68,8 @@
     <script src="app/views/singleCaseView.js"></script>
     <script src="app/collections/caseCollectionModel.js"></script>
     <script src="app/views/caseCollectionView.js"></script>
+    <script src="app/models/caseDetailsModel.js"></script>
+    <script src="app/views/caseDetailsView.js"></script>
     <script src="app/routes/router.js"></script>
 
     <!-- Link to  compiled application -->

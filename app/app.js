@@ -51,7 +51,7 @@ caseCollection.fetch({
     console.log('collection', caseCollection);
     
     var caseCollectionView = new app.CaseCollectionView({ collection: caseCollection});
-    $("#all-cases").html(caseCollectionView.render().el);
+    $("#main-content").html(caseCollectionView.render().el);
 });
 
 var appRouter = new app.Router();
