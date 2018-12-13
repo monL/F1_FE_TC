@@ -21,14 +21,15 @@ app.Router = Backbone.Router.extend({
         }).done(function(){
             if (caseCollectionModel.length === 0 ) {
                 $("#mainContent").html('No cases have been posted yet');
-                $("#seeMoreBtn").toggleClass('hidden');
+                $("#seeMoreBtn").addClass('hidden');
                 return;
             }
 
             var caseCollectionView = new app.CaseCollectionView({ collection: caseCollectionModel});
             //Render collection information using the casecollectionView
             $("#mainContent").html(caseCollectionView.render().el);
-});
+            $("#seeMoreBtn").removeClass('hidden');
+        });
     },
 
     postDetails: function(id) {
